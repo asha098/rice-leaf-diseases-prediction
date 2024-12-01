@@ -1,0 +1,42 @@
+body {
+  font-family: Arial, sans-serif;
+  background: url('https://t3.ftcdn.net/jpg/02/28/76/20/360_F_228762020_md5J7oyDKx8ydqrGyN4Pe173n9j51dQe.jpg'); /* Add your background image */
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+.container {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+input[type="file"] {
+  margin: 10px 0;
+}
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+button:hover {
+  background-color: #45a049;
+}
+#result {
+  margin-top: 20px;
+  font-size: 18px;
+  color: green;
+}
+#error {
+  margin-top: 20px;
+  font-size: 18px;
+  color: red;
+}main 
