@@ -1,42 +1,456 @@
-body {
-  font-family: Arial, sans-serif;
-  background: url('https://t3.ftcdn.net/jpg/02/28/76/20/360_F_228762020_md5J7oyDKx8ydqrGyN4Pe173n9j51dQe.jpg'); /* Add your background image */
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+/* General Reset */
+body, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
-.container {
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #4CAF50; /* Green theme */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-input[type="file"] {
-  margin: 10px 0;
+
+header .logo {
+    display: flex;
+    align-items: center;
 }
+
+header .logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+header .logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+header .logo-text .dark {
+    color: #fff;
+}
+
+header .logo-text .bright {
+    color: #FFD700; /* Golden color */
+}
+
+/* Navigation Menu */
+nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #FFD700;
+    color: #4CAF50;
+    border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    nav ul li a {
+        width: 100%;
+        text-align: left;
+    }
+}
+/* Hero Section Styling */
+.hero-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+
+    /* Background Image with Overlay */
+    background: url("https://static.vecteezy.com/system/resources/thumbnails/035/540/306/small_2x/ai-generated-green-rice-fields-in-the-rainy-season-beautiful-natural-scenery-photo.jpg") no-repeat center center/cover;
+    background-attachment: fixed;
+    box-shadow: inset 0 0 2000px rgba(0, 0, 0, 0.5); /* Dark overlay for better readability */
+}
+
+/* Hero Content */
+.hero-content {
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Sustainable Section Styling */
+.sustainable-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Content Styling */
+.sustainable-content {
+    flex: 1 1 50%;
+    max-width: 600px;
+    padding: 20px;
+    text-align: left;
+}
+
+.sustainable-content h2 {
+    font-size: 2.5rem;
+    color: #2E7D32; /* Green for eco-friendly theme */
+    margin-bottom: 20px;
+}
+
+.sustainable-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.sustainable-content .cta-button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.sustainable-content .cta-button:hover {
+    background-color: #2E7D32;
+    transform: translateY(-2px);
+}
+
+/* Illustration Styling */
+.sustainable-illustration {
+    flex: 1 1 40%;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.sustainable-illustration img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sustainable-section {
+        flex-direction: column;
+    }
+
+    .sustainable-content, 
+    .sustainable-illustration {
+        flex: 1 1 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .sustainable-content h2 {
+        font-size: 2rem;
+    }
+
+    .sustainable-content p {
+        font-size: 1rem;
+    }
+}
+.upload-section {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 9px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Slightly larger shadow for emphasis */
+    width: 100%;
+    max-width: 1500px;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload-section h2 {
+    font-size: 26px; /* Slightly larger font for the heading */
+    margin-bottom: 20px;
+    color: #444; /* Darker color for better readability */
+
+}
+
+#uploadForm {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Increased gap for better spacing */
+    align-items: center;
+    width: 100%; /* Make form elements take up full width */
+}
+
+#leafImage {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 500px; /* You can increase the width */
+    box-sizing: border-box; /* Ensure padding doesn't affect total width */
+    margin-bottom: 15px; /* Space between input and button */
+}
+
 button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 5px;
+    padding: 12px 25px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
 }
+
 button:hover {
-  background-color: #45a049;
+    background-color: #45a049;
 }
-#result {
-  margin-top: 20px;
-  font-size: 18px;
-  color: green;
+
+#imagePreview {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
-#error {
-  margin-top: 20px;
-  font-size: 18px;
-  color: red;
-}main 
+
+#imagePreview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+#predictionResult {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #555;
+}
+
+#predictionResult p {
+    margin: 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+/* Text Section Styling */
+.text {
+    padding: 50px 25px;
+    background-color: #ffffff; /* Clean white background for contrast */
+    text-align: center; /* Center-align the text for a modern look */
+    border-radius: 10px; /* Soft rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 20px auto;
+    max-width: 1500px; /* Limit width for better readability */
+    line-height: 1.8; /* Improve readability */
+    color: #333; /* Neutral text color */
+    font-family: 'Arial', sans-serif; /* Modern sans-serif font */
+}
+
+/* Paragraph Styling */
+.text p {
+    margin: 20px 0; /* Space between paragraphs */
+    font-size: 1.1rem; /* Slightly larger font size */
+}
+
+.text p:first-child {
+    font-size: 1.5rem; /* Highlight the first paragraph */
+    font-weight: bold; /* Emphasize the main message */
+    color: #2E7D32; /* Match the green theme for emphasis */
+}
+
+/* Highlighted Call-to-Action */
+.text p:last-child {
+    font-size: 1.2rem; /* Slightly larger for emphasis */
+    font-weight: bold;
+    color: #4CAF50; /* Use the green theme to highlight */
+    background-color: #e8f5e9; /* Light green background for call-to-action */
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block; /* Wrap text in a neat block */
+    margin-top: 30px; /* Add more spacing from the previous content */
+}
+.shop-section {
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1500px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+.shop-section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+.product {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product img {
+    width: 350px;
+    height: 350px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.product:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+.disease-info {
+    background-color: #f5faff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1500px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.disease-info h2 {
+    font-size: 24px;
+    color: #2a7bf6;
+    margin-bottom: 15px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.disease-info ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding: 0;
+}
+
+.disease-info li {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.disease-info li strong {
+    color: #1c5d99;
+    font-weight: bold;
+}
+.footer-section {
+    background-color: #d2ebcf;
+    color: #070606;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.footer-column h3 {
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li a {
+    color: #050303;
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-icons a img {
+    width: 30px;
+    margin: 0 10px;
+}
