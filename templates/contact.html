@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* General Reset */
+body, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #4CAF50; /* Green theme */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+header .logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+header .logo-text .dark {
+    color: #fff;
+}
+
+header .logo-text .bright {
+    color: #FFD700; /* Golden color */
+}
+
+/* Navigation Menu */
+nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #FFD700;
+    color: #4CAF50;
+    border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    nav ul li a {
+        width: 100%;
+        text-align: left;
+    }
+}
+
+        /* Contact Container */
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 30px 10%;
+            gap: 20px;
+        }
+
+        .contact-info {
+            flex: 1 1 30%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info h2 {
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+        }
+
+        .contact-info a {
+            color: #ffa500;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Form Section */
+        .contact-form {
+            flex: 1 1 60%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form h2 {
+            margin-bottom: 20px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        input, textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #ffa500;
+            box-shadow: 0 0 5px rgba(255, 165, 0, 0.5);
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .error-message {
+            font-size: 12px;
+            color: #ff4d4d;
+            display: none;
+        }
+
+        .submit-btn {
+            padding: 10px 15px;
+            background-color: #ffa500;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #e69500;
+        }
+
+        .feedback {
+            margin-top: 10px;
+            font-size: 14px;
+            color: green;
+            display: none;
+        }
+ .map-container {
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        iframe {
+            border: none;
+            width: 100%;
+            height: 500px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            iframe {
+                height: 300px;
+            }
+        }
+
+        .footer-section {
+    background-color: #d9e0d9;
+    color: #070606;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.footer-column h3 {
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li a {
+    color: #050303;
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-icons a img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_M3BYN2C8Ge4fLomMkfFrTbZtTy-VmY8KrQ&s" alt="">
+            <span class="logo-text">
+                <span class="dark">Leaf Diseases</span> <span class="bright">Hub</span>
+            </span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('resources') }}">Resources</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contact-container">
+        <section class="contact-info">
+            <h2>Get in Touch</h2>
+            <p><strong>Phone:</strong> <a href="tel:1234567890">123-456-7890</a></p>
+            <p><strong>Email:</strong> <a href="mailto:swarnac.in">swarnac.in</a></p>
+            <p><strong>Address:</strong>SCET,Seetharampuram,534280</p>
+        </section>
+
+        <section class="contact-form">
+            <h2>Send a Feedback</h2>
+            <form id="contact-form" action="#" method="POST" novalidate>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="first-name">First Name *</label>
+                        <input type="text" id="first-name" name="first-name" required>
+                        <span class="error-message">Please enter your first name</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last Name *</label>
+                        <input type="text" id="last-name" name="last-name" required>
+                        <span class="error-message">Please enter your last name</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error-message">Please enter a valid email</span>
+                </div>
+                <div class="form-group">
+                    <label for="Feedback">Feedback *</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <span class="error-message">Please enter your message</span>
+                </div></br>
+                <button type="submit" class="submit-btn">Submit</button>
+                <div id="form-feedback" class="feedback"></div>
+            </form>
+        </section>
+    </main>
+           <div class="map-container">
+        <h2>Find Us on the Map</h2>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3822.3288672503385!2d81.71039637524348!3d16.762740117529074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a37045aefdf58fd%3A0x862f0208d263e885!2sSwarnandhra%20College%20of%20Engineering%20%26%20Technology!5e0!3m2!1sen!2sin!4v1683726034289!5m2!1sen!2sin"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+    <footer class="footer-section">
+        <div class="footer-container">
+            <!-- Product Section -->
+            <div class="footer-column">
+                <h3>Product</h3>
+                <ul>
+                    <li><a href="#">Disease Detection</a></li>
+                    <li><a href="#">Prevention Tips</a></li>
+                    <li><a href="#">Disease Reports</a></li>
+                    <li><a href="#">Crop Management Tools</a></li>
+                    <li><a href="#">Mobile App</a></li>
+                </ul>
+            </div>
+    
+            <!-- Solutions Section -->
+            <div class="footer-column">
+                <h3>Solutions</h3>
+                <ul>
+                    <li><a href="#">Farm Health Monitoring</a></li>
+                    <li><a href="#">Pest Control</a></li>
+                    <li><a href="#">Fertilizer Suggestions</a></li>
+                    <li><a href="#">Water Management</a></li>
+                    <li><a href="#">Field Analysis</a></li>
+                </ul>
+            </div>
+    
+            <!-- Learn Section -->
+            <div class="footer-column">
+                <h3>Learn</h3>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Rice Disease Encyclopedia</a></li>
+                    <li><a href="#">Video Tutorials</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Farmer Stories</a></li>
+                </ul>
+            </div>
+    
+            <!-- Support Section -->
+            <div class="footer-column">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Contact Support</a></li>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Submit a Query</a></li>
+                    <li><a href="#">Status Updates</a></li>
+                </ul>
+            </div>
+    
+            <!-- Company Section -->
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press & Media</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>© 2024 Rice Leaf Diseases Inc. | <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a></p>
+            <div class="social-icons">
+                
+                <a href="facebook.com"><img src="data:image/png;base64,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" alt="Facebook"></a>
+                <a href="twitter.com"><img src="data:image/png;base64,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" alt="Twitter"></a>
+                <a href="youtube.com"><img src="data:image/png;base64,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" alt="LinkedIn"></a>
+                <a href="linkedin.com"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAllBMVEUMZMX///8AYcQAWcFDf8nL3PIAWrzQ3vMAYcI0eclZjtAucslAgsz6/v3x9/sgbclOhM8AX8QAYsAAX70AV70AWMLm7vgAXb4sdsw5fsoRbsVmltK6z+iUt+AMZcGDrN3c6fNvnddiltWqwuPA0+r0+vyOrt+lweR9pduuyueUst9Lh81pldd1mtYdbcunxOXO4u7Z4fGRyVlRAAAEKUlEQVR4nO3ce1faMBzG8SblEpSCiUUuQrkMhsCc+v7f3Ko4KjW/yLY0WXOez9mf4Ml3vSW1NYoAAAAAAAAAAAAAAAAAAAAAAAAAAADgYiriIsqU72FURcapGnXHk5aMue+xVCCT6n56x960Z2OpMt8jsozz+Xve0Xqc+h6SXbKzYOeSfex7UBap+J591lThHI3awPxw5KGcVFUj0RayaRrI6UaUj8GTpfA9NivknApkvTC2YdwjC9lc+h6dBWpFB7JFCIXx1FDIRr6HZ0Fq2EkZewjgXNMnLhVH34a+x/fPeMdYOK3/gchvTIFsXf/ZKR+bC+u/DcW1cS/d1f84jFobU+H3ANYXadNU2PU9PAvkd0Ngz/forMgMhU/1P5Xm4h0ZmHQCOAzz68WEPNdsg9iE+ZH4QATeBTApPYqf9PvoKIh99E2qOxQ3jVvf47JHDT5fMl5GAQW+3tNvnF/4N3shwrhJc8Ljw/Q0Q13MJ4GcRc8IORjP99vZfpWlQe2gH3EZx7Gs/4IJAADqQ3DJX/+FM38vqHyKlA5Hhx+Pj49X43468P34CheEiz9Z+pTMlrvFaQ6YbNrblRpKf6vNbHRNKX2yT/kwSVd5XluzGGs//Ew9NfIGS/RYs3X2yUGzp7dpnMYu+zPql1mbp46f+XxeSCkVxrpt8+bmWJgJOTPeYP7m5QkWi4Wye0d94t3m3sNmtFao5OyLvle7zPnRaKlQCb6+IDBfXvddJ1oq5BH5WE7JXd/xwWilUKnJpYGM9a7dPk5mpfCWP18cmO+okdOtaKVwYHxm5ZP1wOWNPBuFneUfBTK2dHkzyEbhwfirco3NxOF+aqPw8rPMbzuHV34bhX+h4e6q6KnQ4ZM6ngrZyNlG9FXo7hfMvgp7zt7o8FXIDq52U2+FznbTKgovmgAsalq4mB0mQqjJYfvler98o6sWhevuYPh2C5jz4WD1ReMPR4soi4W91dmtXy7MK469o7mpvcLn8nRaSWPi9PzH/++FCXvW3LuXpoXxi6MllK1tqHtGLBMd0zccLYNtFR60W8T0wkqv7yTQVuGTfpfLuvRXkms3sxo7hQlx/yy7NayOO3Uq3MXExY148PFY6OZyYafwihqsXNJfGteoMCGXQoYfzxo1KmxSO2kkJvTLcXUq3BreraFnp3UqNLwT3aJPpnUqPNBjTV+CKDScFVv0t+pUaLiytegXq1BoCQoLKNRDYfVQWEChHgqrh8ICCvVQWD0UFlCoh8LqobCAQj0UVg+FBRTqobB6KCygUA+F1UNhAYV6KKweCgso1ENh9VBYQKEeCquHwkKAhe1SIf2UoaFwSP+/dB29FtTvUsbnH+Q3VxTDmxOq+zffskqJiOtFpZda+OV/M6uQKepLof0NWAAAAAAAAAAAAAAAAAAAAAAAAAAAgAr8Aj5RWY0PDbn2AAAAAElFTkSuQmCC" alt="Instagram"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const fields = ['first-name', 'last-name', 'email', 'message'];
+            let valid = true;
+
+            fields.forEach(field => {
+                const input = document.getElementById(field);
+                const errorMessage = input.nextElementSibling;
+
+                if (!input.value.trim()) {
+                    errorMessage.style.display = 'block';
+                    valid = false;
+                } else {
+                    errorMessage.style.display = 'none';
+                }
+
+                if (field === 'email' && input.value.trim()) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(input.value.trim())) {
+                        errorMessage.style.display = 'block';
+                        valid = false;
+                    } else {
+                        errorMessage.style.display = 'none';
+                    }
+                }
+            });
+
+            if (valid) {
+                const feedback = document.getElementById('form-feedback');
+                feedback.textContent = 'Your message has been successfully sent!';
+                feedback.style.display = 'block';
+            }
+        });
+        </script>
+</body>
+</html>
